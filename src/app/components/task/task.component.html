@@ -13,9 +13,14 @@
       <span class="task__id">{{ task.id }}.</span>
       <h2 class="task__title">{{ task.title }}</h2>
     </div>
-    <button class="task__remove" (click)="removeTask(task.id)">
-      <img src="/assets/icons/cross.svg">
-    </button>
+    <div class="task__actions">
+      <button class="task__edit" (click)="removeTask(task.id)">
+        <img src="/assets/icons/edit.svg">
+      </button>
+      <button class="task__remove" (click)="removeTask(task.id)">
+        <img src="/assets/icons/cross.svg">
+      </button>
+    </div>
     <p class="task__description">{{ task.description }}</p>
   </div>
 </div>

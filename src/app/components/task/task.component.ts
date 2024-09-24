@@ -1,6 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ModalComponent } from '../modal/modal.component';
 
 interface Task {
   id: number
@@ -11,7 +12,7 @@ interface Task {
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [FormsModule, NgFor, NgIf],
+  imports: [ModalComponent, FormsModule, NgFor, NgIf],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss'
 })

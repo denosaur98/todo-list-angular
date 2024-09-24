@@ -4,12 +4,11 @@ import { NgIf } from '@angular/common';
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { TaskComponent } from "./components/task/task.component";
-import { ModalComponent } from "./components/modal/modal.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, TaskComponent, ModalComponent, NgIf],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, TaskComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

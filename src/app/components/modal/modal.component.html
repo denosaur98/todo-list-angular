@@ -1,4 +1,12 @@
-<div class="modal__overlay" *ngIf="isModalOpen"></div>
+<div class="modal__overlay" *ngIf="isModalOpen" (click)="closeModal()"></div>
 <div class="modal__window" *ngIf="isModalOpen">
-  <button (click)="closeModal()">X</button>
+  <h1 class="modal__title">Редактируйте задачу</h1>
+  <button class="modal__close" (click)="closeModal()">
+    <img src="/assets/icons/cross.svg">
+  </button>
+  <div class="modal__edit-place">
+    <input class="task__input">
+    <textarea class="task__area"></textarea>
+    <button class="task__save">Сохранить</button>
+  </div>
 </div>

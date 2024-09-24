@@ -2,6 +2,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ModalComponent } from '../modal/modal.component';
+import { ModalService } from '../../services/modal/modal.service';
 
 interface Task {
   id: number
@@ -21,6 +22,9 @@ export class TaskComponent {
   newTaskName = ''
   newTaskDescription = ''
   taskWarning = false
+  isModalOpen: boolean = false
+  
+  constructor(public modalService: ModalService) {}
 
   tasks: Task[] = []
 
@@ -37,5 +41,15 @@ export class TaskComponent {
 
   removeTask(id: number) {
     this.tasks = this.tasks.filter(task => task.id !== id)
+  }
+
+  ngOnInit() {
+    this.modalService.isModalOpen$.subscribe(isOpen => {
+      this.isModalOpen = isOpen
+    })
+  }
+
+  openModal() {
+    this.modalService.openModal()
   }
 }

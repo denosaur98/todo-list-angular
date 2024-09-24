@@ -9,3 +9,25 @@
   box-sizing: border-box;
   font-family: OpenSans;
 }
+
+.task__input {
+  box-shadow: 1px 1px 5px 1px #c9c9c9;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 15px;
+  outline: none;
+  font-size: 17px;
+  width: 100%;
+}
+
+.task__area {
+  box-shadow: 1px 1px 5px 1px #c9c9c9;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 15px;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
+  min-height: 250px;
+  resize: none;
+}

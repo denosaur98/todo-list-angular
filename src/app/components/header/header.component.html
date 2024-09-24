@@ -1,0 +1,5 @@
+<nav class="header__nav">
+  @for (item of navLinks; track item.link) {
+    <a [href]="item.link" class="nav__link">{{ item.title }}</a>
+  }
+</nav>

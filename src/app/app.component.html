@@ -1,0 +1,10 @@
+<div class="app">
+  <app-header></app-header>
+  <app-modal *ngIf="isModalOpen"></app-modal>
+  <button (click)="openModal()">modal</button>
+  <app-task></app-task>
+  <app-footer></app-footer>
+
+</div>
+
+<router-outlet></router-outlet>

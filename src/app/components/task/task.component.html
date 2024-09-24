@@ -1,0 +1,21 @@
+<div class="task">
+  <h1 class="task__name">{{ newTaskName }}</h1>
+  <div class="task__add-elements">
+    <div class="task__add-new">
+      <input [(ngModel)]="newTaskName" placeholder="ВВЕДИТЕ НАЗВАНИЕ ЗАДАЧИ:" class="task__input">
+      <button class="task__add-btn" (click)="addTask()">+</button>
+    </div>
+    <input [(ngModel)]="newTaskDescription" placeholder="ВВЕДИТЕ ОПИСАНИЕ ЗАДАЧИ:" class="task__input">
+    <p class="task__warning" *ngIf="taskWarning">Заполните поля*</p>
+  </div>
+  <div class="task__item" *ngFor="let task of tasks">
+    <div class="task__header">
+      <span class="task__id">{{ task.id }}.</span>
+      <h2 class="task__title">{{ task.title }}</h2>
+    </div>
+    <button class="task__remove" (click)="removeTask(task.id)">
+      <img src="/src/assets/icons/cross.svg">
+    </button>
+    <p class="task__description">{{ task.description }}</p>
+  </div>
+</div>

@@ -47,4 +47,11 @@ export class TaskComponent {
     this.selectedTask = task
     this.modalService.openModal()
   }
+
+  updateTask(changes: { title: string, description: string }) {
+    if(this.selectedTask) {
+      this.selectedTask.title = changes.title
+      this.selectedTask.description = changes.description
+    }
+  }
 }

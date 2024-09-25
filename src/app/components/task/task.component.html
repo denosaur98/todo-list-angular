@@ -23,5 +23,5 @@
     </div>
     <p class="task__description">{{ task.description }}</p>
   </div>
-  <app-modal [taskTitle]="selectedTask?.title || ''" [taskDescription]="selectedTask?.description || ''"></app-modal>
+  <app-modal [taskTitle]="selectedTask?.title || ''" [taskDescription]="selectedTask?.description || ''" (taskChanges)="updateTask($event)"></app-modal>
 </div>

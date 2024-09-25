@@ -14,7 +14,7 @@
       <h2 class="task__title">{{ task.title }}</h2>
     </div>
     <div class="task__actions">
-      <button class="task__edit" (click)="openModal()">
+      <button class="task__edit" (click)="openModal(task)">
         <img src="/assets/icons/edit.svg">
       </button>
       <button class="task__remove" (click)="removeTask(task.id)">
@@ -23,5 +23,5 @@
     </div>
     <p class="task__description">{{ task.description }}</p>
   </div>
-  <app-modal></app-modal>
+  <app-modal [taskTitle]="selectedTask?.title || ''" [taskDescription]="selectedTask?.description || ''"></app-modal>
 </div>

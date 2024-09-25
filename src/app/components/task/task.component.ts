@@ -22,7 +22,7 @@ export class TaskComponent {
   newTaskName = ''
   newTaskDescription = ''
   taskWarning = false
-  isModalOpen: boolean = false
+  selectedTask: Task | null = null
   
   constructor(public modalService: ModalService) {}
 
@@ -43,13 +43,8 @@ export class TaskComponent {
     this.tasks = this.tasks.filter(task => task.id !== id)
   }
 
-  ngOnInit() {
-    this.modalService.isModalOpen$.subscribe(isOpen => {
-      this.isModalOpen = isOpen
-    })
-  }
-
-  openModal() {
+  openModal(task: Task) {
+    this.selectedTask = task
     this.modalService.openModal()
   }
 }

@@ -5,8 +5,8 @@
     <img src="/assets/icons/cross.svg">
   </button>
   <div class="modal__edit-place">
-    <input class="task__input">
-    <textarea class="task__area"></textarea>
+    <input class="task__input" [value]="taskTitle">
+    <textarea class="task__area">{{ taskDescription }}</textarea>
     <button class="task__save">Сохранить</button>
   </div>
 </div>

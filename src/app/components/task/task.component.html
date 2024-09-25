@@ -8,7 +8,7 @@
     <input [(ngModel)]="newTaskDescription" placeholder="ВВЕДИТЕ ОПИСАНИЕ ЗАДАЧИ:" class="task__input">
     <p class="task__warning" *ngIf="taskWarning">Заполните поля*</p>
   </div>
-  <div class="task__item" *ngFor="let task of tasks">
+  <div class="task__item" *ngFor="let task of tasks.reverse()">
     <div class="task__header">
       <span class="task__id">{{ task.id }}.</span>
       <h2 class="task__title">{{ task.title }}</h2>

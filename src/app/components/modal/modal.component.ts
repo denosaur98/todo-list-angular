@@ -19,9 +19,6 @@ export class ModalComponent implements OnInit {
 
   @Output() taskChanges = new EventEmitter<{ title: string, description: string }>()
 
-  changeTaskTitle: string = ''
-  changeTaskDescription: string = ''
-
   constructor(public modalService: ModalService) {}
 
   ngOnInit() {
@@ -35,7 +32,7 @@ export class ModalComponent implements OnInit {
   }
 
   saveTaskChanges() {
-    this.taskChanges.emit({ title: this.changeTaskTitle, description: this.changeTaskDescription })
+    this.taskChanges.emit({ title: this.taskTitle, description: this.taskDescription })
     this.modalService.closeModal()
   }
 }

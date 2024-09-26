@@ -1,9 +1,11 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [NgFor, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -11,6 +13,6 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   navLinks = [
     { title: 'Главная', link: '/' },
-    { title: 'О нас', link: '/about' },
-  ]
+    { title: 'О нас', link: 'about' },
+  ];
 }

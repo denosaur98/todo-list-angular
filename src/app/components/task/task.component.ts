@@ -1,19 +1,21 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ModalComponent } from '../modal/modal.component';
 import { ModalService } from '../../services/modal/modal.service';
 
 interface Task {
   id: number
   title: string
-  description: string
+  description: string,
+  link: any
 }
 
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [ModalComponent, FormsModule, NgFor, NgIf],
+  imports: [ModalComponent, FormsModule, NgFor, NgIf, RouterLink, RouterLinkActive],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss'
 })
@@ -30,7 +32,7 @@ export class TaskComponent {
 
   addTask() {
     if(this.newTaskName && this.newTaskDescription) {
-      this.tasks.push({ id: this.tasks.length + 1, title: this.newTaskName, description: this.newTaskDescription })
+      this.tasks.push({ id: this.tasks.length + 1, title: this.newTaskName, description: this.newTaskDescription, link: `task-${this.tasks.length + 1}` })
       this.newTaskName = ''
       this.newTaskDescription = ''
       this.taskWarning = false

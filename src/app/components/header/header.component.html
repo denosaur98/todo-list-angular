@@ -1,5 +1,10 @@
 <nav class="header__nav">
-  @for (item of navLinks; track item.link) {
-    <a [href]="item.link" class="nav__link">{{ item.title }}</a>
-  }
+  <a
+    class="nav__link"
+    *ngFor="let link of navLinks"
+    [routerLink]="link.link"
+    routerLinkActive="active"
+  >
+    {{ link.title }}
+  </a>
 </nav>

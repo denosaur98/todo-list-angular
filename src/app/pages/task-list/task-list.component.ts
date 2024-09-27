@@ -2,7 +2,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalComponent } from '../../components/modal/modal.component';
 import { ModalService } from '../../services/modal/modal.service';
 
 interface Task {
@@ -13,14 +13,14 @@ interface Task {
 }
 
 @Component({
-  selector: 'app-task',
+  selector: 'app-task-list',
   standalone: true,
   imports: [ModalComponent, FormsModule, NgFor, NgIf, RouterLink, RouterLinkActive],
-  templateUrl: './task.component.html',
-  styleUrl: './task.component.scss'
+  templateUrl: './task-list.component.html',
+  styleUrl: './task-list.component.scss'
 })
 
-export class TaskComponent {
+export class TaskListComponent {
   newTaskName = ''
   newTaskDescription = ''
   taskWarning = false
